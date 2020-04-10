@@ -58,6 +58,7 @@ GEM
       zeitwerk (~> 2.2)
     autoprefixer-rails (9.7.1)
       execjs
+    bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -69,6 +70,13 @@ GEM
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    dalli (2.7.10)
+    devise (4.7.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     erubi (1.9.0)
     execjs (2.7.0)
@@ -100,6 +108,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
+    orm_adapter (0.5.0)
     pg (1.1.4)
     popper_js (1.14.5)
     puma (4.3.0)
@@ -139,6 +148,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redis (4.1.3)
+    responders (3.0.0)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -178,6 +191,8 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (4.0.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -196,24 +211,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.4.2)
-  bootstrap (~> 4.3.1)
+  bcrypt
+  bootsnap
+  bootstrap
   byebug
+  dalli
+  devise
   foreman
-  jbuilder (~> 2.7)
+  jbuilder
   listen (>= 3.0.5, < 3.2)
-  pg (>= 0.18, < 2.0)
-  puma (~> 4.1)
-  rails (~> 6.0.1)
+  pg
+  puma
+  rails (~> 6)
+  redis
   rspec
   rspec-its
-  sass-rails (>= 6)
+  sass-rails
   tzinfo-data
   web-console (>= 3.3.0)
-  webpacker (~> 4.0)
-
-RUBY VERSION
-   ruby 2.6.3p62
+  webpacker
 
 BUNDLED WITH
-   1.17.2
+   2.1.4
